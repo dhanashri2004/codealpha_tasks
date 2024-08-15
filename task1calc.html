@@ -1,0 +1,129 @@
+<!DOCTYPE html> 
+<html> 
+  
+<head>
+    <title>
+         CALCULATOR
+    </title> 
+    
+ 
+  
+  
+    
+    <style> 
+    body {
+            background-image: url('https://img.freepik.com/free-photo/business-elements-composition-with-smartphone_23-2147985117.jpg?w=996&t=st=1721579558~exp=1721580158~hmac=ee457d09bedde95e684cbf62e262ad23d87376cc45cc1e7b26dcea5bee9e9ab0');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    
+    
+      { 
+            border: 1px solid black; 
+            margin-left: 50%; 
+            margin-right: 5%; 
+        } 
+        
+        input[type="button"] { 
+            height: 10%;
+            width: 80%; 
+            padding: 20px 1px; 
+            background-color: rgb(55, 54, 54); 
+            color: rgb(207, 199, 199); 
+            font-size: 20px; 
+            font-weight: bold; 
+            border-radius: 20px; 
+             
+        } 
+          
+        input[type="text"] { 
+            width: 90%;
+            padding: 10px 5px; 
+            background-color: rgb(228, 230, 232);
+            font-size: 24px; 
+            font-weight: bold; 
+            border: none; 
+            border-radius: 5px; 
+            border: 2px solid rgb(9, 9, 9); 
+        } 
+        h1{r
+            text-align:start;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+    </style> 
+</head> 
+  
+<body> 
+
+    <table id="calcu"> 
+<tr> 
+            <td colspan="20"> 
+                <input type="text" id="result"> 
+            </td> 
+            
+ </tr> 
+
+    <tr>
+
+        <td> <input type="button" value='1' onclick="Solve('1')"></td>
+            <td> <input type="button" value='2' onclick="Solve('2')"></td>
+                <td> <input type="button" value='3' onclick="Solve('3')"></td>
+                    <td><input type="button" value='+' onclick="Solve('+')"></td>
+                      
+  </tr>
+    <tr>
+
+        <td><input type="button" value='4' onclick="Solve('4')"></td>
+            <td> <input type="button" value='5' onclick="Solve('5')"></td>
+                <td><input type="button" value='6' onclick="Solve('6')"></td>
+                    <td><input type="button" value='-' onclick="Solve('-')"></td>
+  </tr> 
+    <tr>
+        <td> <input type="button" value='7' onclick="Solve('7')"></td>
+            <td> <input type="button" value='8' onclick="Solve('8')"></td>
+                <td><input type="button" value='9' onclick="Solve('9')"></td>
+                    <td> <input type="button" value='/' onclick="Solve('/')"></td>
+  </tr>
+    <tr>
+       <td> <input type="button" value='0' onclick="Solve('0')"></td>
+               <td> <input type="button" value='.' onclick="Solve('.')"></td>
+                    <td> <input type="button" value='=' onclick="Result()"></td>
+                    <td> <input type="button" value='C' onclick="Clear()" id="clear"></td>
+  </tr>
+    </table> 
+    <script>
+        let output = document.getElementById('result');
+        let calculation = '';
+
+        function Solve(value) {
+                  calculation += value;
+                    output.value = calculation;
+     }
+
+             function Result() {
+                  try {
+                       output.value = eval(calculation);
+                          calculation = output.value;
+          } catch (error) {
+                  output.value = 'Error';
+                      calculation = '';
+            }
+        }
+
+        function Clear() {
+            calculation = '';
+            output.value = calculation;
+        }
+    </script>
+   
+</body> 
+  
+</html>
